@@ -25,9 +25,9 @@ Mybatis-mapper Spring中间件，用于整合Spring和Mybatis-mapper组件。
 
 ```xml
 <dependency>
-	<groupId>com.viiyue.plugins</groupId>
-	<artifactId>mybatis-mapper-spring</artifactId>
-	<version>[VERSION]</version>
+    <groupId>com.viiyue.plugins</groupId>
+    <artifactId>mybatis-mapper-spring</artifactId>
+    <version>[VERSION]</version>
 </dependency>
 ```
 
