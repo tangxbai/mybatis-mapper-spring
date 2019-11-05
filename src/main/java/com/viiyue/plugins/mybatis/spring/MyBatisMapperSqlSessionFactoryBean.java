@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2019 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.viiyue.plugins.mybatis.spring;
 
 import static org.springframework.util.Assert.notNull;
@@ -76,6 +91,7 @@ import com.viiyue.plugins.mybatis.utils.LoggerUtil;
  * @author tangxbai
  * @since mybatis-spring 2.0.3
  * @since mybatis-mapper 1.3.0
+ * @since mybatis-mapper-spring 1.3.0
  * 
  * @see SqlSessionFactoryBean
  */
@@ -399,7 +415,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * Whether to enable log printing
 	 * 
 	 * @param enableLogger whether to print the log
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	public void setEnableLogger( boolean enableLogger ) {
 		initConfigurationProperties();
@@ -407,10 +423,21 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	}
 
 	/**
+	 * Whether to enable mapper scan log
+	 * 
+	 * @param enableMapperScanLog whether to enable mapper scan log
+	 * @since mybatis-mapper-spring 1.3.0
+	 */
+	public void setEnableMapperScanLog( boolean enableMapperScanLog ) {
+		initConfigurationProperties();
+		this.configurationProperties.put( "enableMapperScanLog", enableMapperScanLog );
+	}
+	
+	/**
 	 * Whether to enable runtime logs
 	 * 
 	 * @param enableCompilationLog whether to enable runtime logs
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	public void setEnableRuntimeLog( boolean enableRuntimeLog ) {
 		initConfigurationProperties();
@@ -421,7 +448,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * Whether to enable compilation log
 	 * 
 	 * @param enableCompilationLog whether to enable compilation log
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	public void setEnableCompilationLog( boolean enableCompilationLog ) {
 		initConfigurationProperties();
@@ -432,7 +459,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * Whether to enable keyword to uppercase configuration
 	 * 
 	 * @param enableKeywordsToUppercase whether to convert to uppercase keywords
-	 * @since mybatis-mapper 1.2.0 
+	 * @since mybatis-mapper-spring 1.3.0 
 	 */
 	public void setEnableKeywordsToUppercase( boolean enableKeywordsToUppercase ) {
 		initConfigurationProperties();
@@ -443,7 +470,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * Set the database column style
 	 * 
 	 * @param databaseColumnStyle the database column style
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	public void setDatabaseColumnStyle( String databaseColumnStyle ) {
 		initConfigurationProperties();
@@ -454,7 +481,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * Whether to enable xml syntax parsing
 	 * 
 	 * @param enableXmlSyntaxParsing whether enable xml syntax parsing
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	public void setEnableXmlSyntaxParsing( boolean enableXmlSyntaxParsing ) {
 		initConfigurationProperties();
@@ -639,7 +666,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	/**
 	 * Add mybatis-mapper plugin to refactor the basic functionality of mybatis
 	 * 
-	 * @since 1.2.0 of mybatis-mapper
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	@Override
 	public void onApplicationEvent( ApplicationEvent event ) {
@@ -653,7 +680,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	/**
 	 * Mybatis-mapper auxiliary method
 	 * 
-	 * @since mybatis-mapper 1.2.0
+	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	private void initConfigurationProperties() {
 		if ( configurationProperties == null ) {
