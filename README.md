@@ -18,8 +18,8 @@ mybatis-mapper和spring的中间件，用于整合spring和mybatis-mapper组件�
 ## 项目演示
 
 - java + mybatis-mapper - [点击获取]( https://github.com/tangxbai/mybatis-mapper-demo)
-- spring + mybatis-mapper- [点击获取]( https://github.com/tangxbai/mybatis-mapper-spring-demo)
-- springboot + mybatis-mapper- [点击获取]( https://github.com/tangxbai/mybatis-mapper-spring-boot/mybatis-mapper-spring-boot-samples)
+- spring + mybatis-mapper - [点击获取]( https://github.com/tangxbai/mybatis-mapper-spring-demo)
+- springboot + mybatis-mapper - [点击获取](https://github.com/tangxbai/mybatis-mapper-spring-boot/tree/master/mybatis-mapper-spring-boot-samples)
 
 
 
