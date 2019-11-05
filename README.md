@@ -1,5 +1,5 @@
 # mybatis-mapper-spring
-[![mybatis-mapper-spring](https://img.shields.io/badge/plugin-mybatis--mapper--spring-green)](https://github.com/tangxbai/mybatis-mappe-spring) ![version](https://img.shields.io/badge/release-1.2.0-blue) [![maven central](https://img.shields.io/badge/maven%20central-1.2.0-brightgreen)](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis) [![license](https://img.shields.io/badge/license-Apache%202.0-blue)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![mybatis-mapper-spring](https://img.shields.io/badge/plugin-mybatis--mapper--spring-green)](https://github.com/tangxbai/mybatis-mappe-spring) ![version](https://img.shields.io/badge/release-1.3.0-blue) [![maven central](https://img.shields.io/badge/maven%20central-1.3.0-brightgreen)](https://maven-badges.herokuapp.com/maven-central/org.mybatis/mybatis) [![license](https://img.shields.io/badge/license-Apache%202.0-blue)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 mybatis-mapper和spring的中间件，用于整合spring和mybatis-mapper组件。更好的将mybatis-mapper应用到spring各组件中。
 
