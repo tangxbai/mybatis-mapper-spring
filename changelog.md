@@ -1,3 +1,9 @@
+## v1.3.1 ( 2020/03 )
+
+1. 优化mybatis-mapper版本号，从固定版本到范围区间优先选择最新版本；
+2. 修复日志打印控制失效的问题；
+3. 更改CHANGELOG.md名为changelog.md;
+
 ## v1.3.0 ( 2019/11 )
 
 1. 升级到mybatis-mapper最新版本

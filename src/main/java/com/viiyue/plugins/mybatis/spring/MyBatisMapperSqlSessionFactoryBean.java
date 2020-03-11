@@ -70,6 +70,7 @@ import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 import org.springframework.util.ClassUtils;
 
 import com.viiyue.plugins.mybatis.MyBatisMapperLanguageDriver;
+import com.viiyue.plugins.mybatis.enums.Setting;
 import com.viiyue.plugins.mybatis.scripting.MyBatisMapperBuilder;
 import com.viiyue.plugins.mybatis.utils.LoggerUtil;
 
@@ -600,6 +601,7 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 				ErrorContext.instance().reset();
 			}
 		}
+		Setting.copyPropertiesFromConfiguration( targetConfiguration );
 		
 		// ↑↑ Changed position ↑↑
 		// Changed the order, nothing else changed.
