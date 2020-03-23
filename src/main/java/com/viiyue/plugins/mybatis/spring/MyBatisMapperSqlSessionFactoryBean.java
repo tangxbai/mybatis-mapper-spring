@@ -55,7 +55,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -96,13 +95,17 @@ import com.viiyue.plugins.mybatis.utils.LoggerUtil;
  * 
  * @see SqlSessionFactoryBean
  */
-public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, InitializingBean, ApplicationListener<ApplicationEvent> {
+public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<SqlSessionFactory>, InitializingBean, ApplicationListener<ContextRefreshedEvent> {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger( MyBatisMapperSqlSessionFactoryBean.class );
 
 	private static final ResourcePatternResolver RESOURCE_PATTERN_RESOLVER = new PathMatchingResourcePatternResolver();
 	private static final MetadataReaderFactory METADATA_READER_FACTORY = new CachingMetadataReaderFactory();
 
+	// Bean initialization status monitoring
+	// Added in 1.3.2
+	private boolean isInitialized;
+	
 	// mybatis-spring original variables
 	
 	private Resource configLocation;
@@ -671,8 +674,9 @@ public final class MyBatisMapperSqlSessionFactoryBean implements FactoryBean<Sql
 	 * @since mybatis-mapper-spring 1.3.0
 	 */
 	@Override
-	public void onApplicationEvent( ApplicationEvent event ) {
-		if ( event instanceof ContextRefreshedEvent ) {
+	public void onApplicationEvent( ContextRefreshedEvent event ) {
+		if ( !isInitialized ) { // Added in 1.3.2
+			isInitialized = true; // Prevent duplicate execution
 			LoggerUtil.printBootstrapLog();
 			this.mybatisMapperBuilder.refactoring( sqlSessionFactory.getConfiguration() );
 			LoggerUtil.printLoadedLog();
