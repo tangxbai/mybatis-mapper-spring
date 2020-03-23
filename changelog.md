@@ -1,3 +1,7 @@
+## v1.3.1 ( 2020/03/23 )
+
+1. 优化MyBatisMapperSqlSessionFactoryBean中当容器启动完成后的监听函数被二次调用导致程序异常的问题；
+
 ## v1.3.1 ( 2020/03 )
 
 1. 优化mybatis-mapper版本号，从固定版本到范围区间优先选择最新版本；
