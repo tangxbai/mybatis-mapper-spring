@@ -48,7 +48,7 @@
 	</issueManagement>
 
 	<properties>
-		<spring.version>4.3.5.RELEASE</spring.version>
+		<spring.version>5.2.22.RELEASE</spring.version>
 		<mybatis-spring.version>2.0.3</mybatis-spring.version>
 		<mybatis-mapper.version>[1.3.0,1.4.0)</mybatis-mapper.version>
 	</properties>
